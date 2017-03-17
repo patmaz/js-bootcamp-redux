@@ -5,6 +5,7 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+export const CHANGE_NEW_COMMENT_FIELD = 'CHANGE_NEW_COMMENT_FIELD';
 
 export const addComment = (text) => {
     return {
@@ -41,5 +42,12 @@ export const thumbDownComment = (id) => {
     return {
         type: THUMB_DOWN_COMMENT,
         id
+    }
+}
+
+export const changeNewCommentField = (text) => {
+    return {
+        type: CHANGE_NEW_COMMENT_FIELD,
+        text
     }
 }

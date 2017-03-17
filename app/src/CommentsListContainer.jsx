@@ -1,8 +1,15 @@
 import {connect} from 'react-redux';
 import CommentsList from './CommentList.jsx';
+import {addComment, changeNewCommentField} from './actions.js';
 
 const mapStateToProps = state => ({
-    comments: state.comments
+    comments: state.comments,
+    fieldsContent: state.fieldsContent
 });
 
-export default connect(mapStateToProps)(CommentsList);
+const mapDispatchToProps = dispatch => ({
+    addComment: (text) => dispatch(addComment(text)),
+    changeNewCommentField: (text) => dispatch(changeNewCommentField(text))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsList);

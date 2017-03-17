@@ -4,10 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import App from './App';
 import './index.css';
-import commentsReducer from './comments.js';
+import commentsReducer from './commentsReducer.js';
+import fieldsContentReducer from './fieldsContentReducer.js';
+import {addComment} from './actions.js';
 
 const reducer = combineReducers({
-    commentsReducer
+    comments: commentsReducer,
+    fieldsContent: fieldsContentReducer
 });
 
 const store = createStore(reducer);

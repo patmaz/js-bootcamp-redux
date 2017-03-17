@@ -9,9 +9,9 @@ function commentsReducer(state = [], action) {
                     votes: 0
                 }, ...state];
         case REMOVE_COMMENT:
-            return state.comments.filter(comment => comment.id !== action.id);
+            return state.filter(comment => comment.id !== action.id);
         case EDIT_COMMENT:
-            return state.comments.map((comment) => {
+            return state.map((comment) => {
                 if (comment.id === action.id) {
                     return {
                         text: action.text,
@@ -22,23 +22,21 @@ function commentsReducer(state = [], action) {
                 return comment;
             });
         case THUMB_UP_COMMENT:
-            return state.comments.map((comment) => {
+            return state.map((comment) => {
                 if (comment.id === action.id) {
                     return {
-                        text: comment.text,
-                        id: comment.id,
-                        votes: comment.votes++
+                        ...comment,
+                        votes: comment.votes + 1
                     };
                 }
                 return comment;
             });
         case THUMB_DOWN_COMMENT:
-            return state.comments.map((comment) => {
+            return state.map((comment) => {
                 if (comment.id === action.id) {
                     return {
-                        text: comment.text,
-                        id: comment.id,
-                        votes: comment.votes--
+                        ...comment,
+                        votes: comment.votes -1
                     };
                 }
                 return comment;

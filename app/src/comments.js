@@ -1,6 +1,6 @@
 import {ADD_COMMENT, REMOVE_COMMENT, EDIT_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT} from './actions';
 
-function reducerComments(state = [], action) {
+function commentsReducer(state = [], action) {
     switch(action.type) {
         case ADD_COMMENT:
             return [{
@@ -47,4 +47,4 @@ function reducerComments(state = [], action) {
     }
 }
 
-export default reducerComments;
+export default commentsReducer;

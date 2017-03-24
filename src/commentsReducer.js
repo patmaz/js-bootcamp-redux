@@ -14,9 +14,8 @@ function commentsReducer(state = [], action) {
             return state.map((comment) => {
                 if (comment.id === action.id) {
                     return {
-                        text: action.text,
-                        id: comment.id,
-                        votes: comment.votes
+                        ...comment,
+                        text: action.text
                     };
                 }
                 return comment;

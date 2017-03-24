@@ -7,12 +7,10 @@ import DevTools from './DevTools.js';
 import App from './App';
 import './index.css';
 import commentsReducer from './commentsReducer.js';
-import fieldsContentReducer from './fieldsContentReducer.js';
 import {addComment} from './actions.js';
 
 const reducer = combineReducers({
-    comments: commentsReducer,
-    fieldsContent: fieldsContentReducer
+    comments: commentsReducer
 });
 
 const logger = createLogger();
